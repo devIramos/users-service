@@ -3,7 +3,7 @@ name: Angular CI
 
 on:
   push:
-    branches: [ AR01_A_TITAN_ARQUETIPO-ANGULAR ]
+    branches: [ "main" ]
 
 jobs:
   build:
