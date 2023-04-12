@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
     
+env:
+  PATH_NET_DOCKERFILE: back/ArchetypeNet
 jobs:
 
   build:
