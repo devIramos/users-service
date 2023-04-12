@@ -1,0 +1,9 @@
+﻿global using AutoMapper;
+global using Company.Project.Common.DTOs.Requests.Role;
+global using Company.Project.Common.DTOs.Requests.User;
+global using Company.Project.Model.Entities;
+global using MediatR;
+global using Company.Project.Common.DTOs.Responses.User;
+global using Company.Project.Common.Mapping;
+global using Microsoft.Extensions.DependencyInjection;
+global using Company.Project.Common.DTOs.Responses.Role;

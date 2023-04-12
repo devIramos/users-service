@@ -1,0 +1,1 @@
+﻿global using Company.Project.Model.Entities.Common;

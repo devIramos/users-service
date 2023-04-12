@@ -1,0 +1,10 @@
+﻿global using Company.Project.Common.Notifications.Module;
+global using Company.Project.Facade.Project;
+global using Company.Project.Facade.Project.Impl;
+global using Company.Project.Services.User;
+global using MediatR;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using Company.Project.Common.DTOs.Responses.User;
+global using Company.Project.Common.DTOs.Requests.User;

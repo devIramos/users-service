@@ -1,0 +1,50 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:24963",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "Company.Project.API": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5111",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "REDISDATA_SVC_SERVICE_HOST": "localhost",
+        "REDISDATA_SVC_SERVICE_PORT": "6379",
+        "MSSQL_DEPLOYMENT_SERVICE_HOST": ".",
+        "MSSQL_DATABASE": "arquetipo",
+        "MSSQL_USER": "sa",
+        "MSSQL_PWD": "4rquetipo!",
+        "KAFKA_SERVICE_SERVICE_HOST": "192.168.0.12",
+        "KAFKA_SERVICE_SERVICE_PORT": "9192",
+        "KAFKA_CONNECTION_STRING": "",
+        "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=3ec8f62d-f30a-4e00-a472-f10b9bb010c5;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "REDISDATA_SVC_SERVICE_HOST": "192.168.0.12",
+        "REDISDATA_SVC_SERVICE_PORT": "6379",
+        "MSSQL_DEPLOYMENT_SERVICE_HOST": "192.168.0.12",
+        "MSSQL_DATABASE": "PartsMx_FLC_Fleetcontrol3",
+        "MSSQL_USER": "fleetcontrol",
+        "MSSQL_PWD": "7XTd6arrRbUQ5jH5",
+        "KAFKA_SERVICE_SERVICE_HOST": "192.168.0.12",
+        "KAFKA_SERVICE_SERVICE_PORT": "9192",
+        "KAFKA_CONNECTION_STRING": "",
+        "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=3ec8f62d-f30a-4e00-a472-f10b9bb010c5;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/"
+      }
+    }
+  }
+}

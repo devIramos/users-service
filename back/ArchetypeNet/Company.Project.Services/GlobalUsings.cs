@@ -1,0 +1,12 @@
+﻿global using Microsoft.Extensions.DependencyInjection;
+global using AutoMapper;
+global using Axity.Kafka;
+global using Company.Project.Persistence.UnitOfWork;
+global using Company.Project.Services.User;
+global using Company.Project.Services.User.Impl;
+global using Company.Project.Common.DTOs.Requests.User;
+global using Company.Project.Model.Entities;
+global using Axity.Commons.Extensions;
+global using Axity.Commons.Exceptions;
+global using Company.Project.Common.DTOs.Messages;
+global using Company.Project.Common.DTOs.Responses.User;
