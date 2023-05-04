@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
 
@@ -15,5 +15,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-
+      run: docker build . --file Dockerfile --tag my-image-name:v1
+      
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+    # Container registry username
+        username: password1
+    # Container registry password
+        password: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
+    # Container registry server url
+        login-server: https://devsecopscelula.azurecr.io
+        
