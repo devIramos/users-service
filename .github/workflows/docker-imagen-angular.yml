@@ -33,20 +33,20 @@ jobs:
       - name: test CI with NPM
         run: npm run test-ci
         working-directory: front
-
-      - name: sonar-scanner
-        run: |
-          /opt/sonar-scanner/bin/sonar-scanner \
-          -Dsonar.projectKey=22_axity_angular_archetype \
-          -Dsonar.host.url=https://devtools.axity.com/sonarlts \
-          -Dsonar.login=d54f4f0b0ecc98ca94c88640833783fe52216269 \
-          -Dsonar.sourceEncoding=UTF-8 \
-          -Dsonar.sources=src/app \
-          -Dsonar.exclusions=**/node_modules/**,**/*.spec.ts,**/*.module.ts,**/app.child.imports.ts \
-          -Dsonar.tests=src \
-          -Dsonar.test.inclusions=**/*.spec.ts \
-          -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
-        working-directory: front
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      working-directory: ${{ env.PATH_DOCKERFILE}}
+        
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:v1
+        working-directory: ${{ env.PATH_DOCKERFILE}}
+      - name: acr-sign-push
+  # You may pin to the exact commit or the version.
+  # uses: dodopizza/acr-sign-push-action@6688de830a974866ae37da84ecf180b5aed8ebaf
+        uses: dodopizza/acr-sign-push-action@0.1.2
+        with:
+          # image tags separated by comma, example: example.azurecr.io/app:latest
+          tags: my-image-name:v1
+            # signer key id (hash)
+          signer-key-id: TokenGitHub
+            # signer key content base64 encoded
+          signer-key: di+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
+            # repository passphrase
+          repository-passphrase: devsecopscelula.azurecr.io
