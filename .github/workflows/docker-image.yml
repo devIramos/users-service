@@ -7,28 +7,25 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
+    name: Build container image
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:v1
-      
-    - name: Azure Container Registry Login
-      uses: Azure/docker-login@v1
-      with:
-    # Container registry username
-        username: password1
-    # Container registry password
-        password: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
-    # Container registry server url
-        login-server: https://devsecopscelula.azurecr.io
-        
-    - name: Push
-      uses: docker/build-push-action@v2
-      with:
-        push: true
-        tags: devsecopscelula.azurecr.io/my-image-name:v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Get tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
+      - name: Log into registry
+        uses: docker/login-action@v1
+        with:
+          registry: https://devsecopscelula.azurecr.io
+          username: password1
+          password: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
+      - name: Build & Push
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          build-args: |
+            version=${{ steps.tag.outputs.tag }}
+          tags: https://devsecopscelula.azurecr.io/my-image-name:v1
