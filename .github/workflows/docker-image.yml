@@ -27,16 +27,8 @@ jobs:
     # Container registry server url
         login-server: https://devsecopscelula.azurecr.io
         
-    - name: acr-sign-push
-  # You may pin to the exact commit or the version.
-  # uses: dodopizza/acr-sign-push-action@6688de830a974866ae37da84ecf180b5aed8ebaf
-      uses: dodopizza/acr-sign-push-action@0.1.2
+    - name: Push
+      uses: docker/build-push-action@v2
       with:
-    # image tags separated by comma, example: example.azurecr.io/app:latest
-        tags: my-image-name:v1
-    # signer key id (hash)
-        signer-key-id: DevSecOpsCelula
-    # signer key content base64 encoded
-        signer-key: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
-    # repository passphrase
-        repository-passphrase: password1
+        push: true
+        tags: https://devsecopscelula.azurecr.io/my-image-name:/v1
