@@ -19,9 +19,9 @@ jobs:
       - name: Log into registry
         uses: docker/login-action@v1
         with:
-          registry: https://devsecopscelula.azurecr.io
-          username: password1
-          password: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
+          registry: ${{ secrets.ACR_ENDPOINT }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
       - name: Build & Push
         uses: docker/build-push-action@v2
         with:
