@@ -2,10 +2,14 @@ name: Docker Image CI
 
 on:
   push:
+    tags: ["v*.*.*"]
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
+env:
+  IMAGE_NAME: my-image-name
+  
 jobs:
   build:
     name: Build container image
