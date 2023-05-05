@@ -2,9 +2,9 @@ name: Docker Image angular
 
 on:
   push:
-    branches: [ "main" ]
+    #branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    #branches: [ "main" ]
     
 env:
   PATH_DOCKERFILE: front
