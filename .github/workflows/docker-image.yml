@@ -37,6 +37,6 @@ jobs:
     # signer key id (hash)
         signer-key-id: DevSecOpsCelula
     # signer key content base64 encoded
-        signer-key: password1
+        signer-key: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
     # repository passphrase
-        repository-passphrase: i+MTnmUUEoqe9GcnojItwgpmZUgn4917bWAiQ1Ze85+ACRA5Ctvk
+        repository-passphrase: password1
