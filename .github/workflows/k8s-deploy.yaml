@@ -13,7 +13,7 @@ env:
     DEPLOYMENT_MANIFEST_PATH: |
         ./manifest/deploy-user-service.yaml
 jobs:
-    buildImage:
+    buildAndPushImage:
         permissions:
             contents: read
             id-token: write
@@ -28,14 +28,14 @@ jobs:
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push image to ACR
               run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./Dockerfile ./
-    deploy:
+    deployToK8sAzure:
         permissions:
             actions: read
             contents: read
             id-token: write
         runs-on: ubuntu-latest
         needs:
-            - buildImage
+            - buildAndPushImage
         steps:
             - uses: actions/checkout@v3
             - uses: cschleiden/replace-tokens@v1
