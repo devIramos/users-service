@@ -16,9 +16,9 @@ jobs:
       - name: Log into registry
         uses: docker/login-action@v1
         with:
-          registry: https://devsecopscelula.azurecr.io
-          username: DevSecOpsCelula
-          password: iFPF1TvEEl3QXmNuokE0/BY7YyEpybmTPKI2ldCIqg+ACRDDc2Kr
+          registry: https://devsecopsregaxyt.azurecr.io
+          username: DevSecOpsRegAxyt
+          password: rFSH9yZPS1bjKJqxHRaYQBkw+69E+y3e22zFj/XcZi+ACRBj0Xvf
       - name: Build & Push
         uses: docker/build-push-action@v2
         with:
