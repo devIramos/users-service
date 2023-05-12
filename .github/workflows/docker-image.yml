@@ -3,15 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 env:
   IMAGE_NAME: my-image-name
   
 jobs:
   build:
-    name: Build container image
+    name: Build And Push Image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,4 +25,4 @@ jobs:
           push: true
           build-args: |
             version= 1.0
-          tags: devsecopscelula.azurecr.io/my-image-name:v1
+          tags: devsecopscelula.azurecr.io/my-image-name:${{ github.run_number }}
