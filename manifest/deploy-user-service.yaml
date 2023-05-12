@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: users-service
-          image: image-build-from-azure
+          image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
           imagePullPolicy: Always
           ports:
             - containerPort: 80
