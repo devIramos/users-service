@@ -7,7 +7,7 @@ env:
   IMAGE_NAME: my-image-name
   
 jobs:
-  build:
+  BuildAndPush:
     name: Build And Push Image
     runs-on: ubuntu-latest
     steps:
