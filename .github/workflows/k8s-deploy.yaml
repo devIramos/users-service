@@ -28,6 +28,15 @@ jobs:
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push image to ACR
               run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./Dockerfile ./
+            - uses: cschleiden/replace-tokens@v1
+              with:
+                files: '["manifest/*.yaml"]'
+                tokenPrefix: __ # optional, default is #{
+                tokenSuffix: __ # optional, default is }#
+              env:
+                 DOCKER_REPOSITORY:  devsecopsregaxyt.azurecr.io
+                 IMAGE_NAME: ${{ env.CONTAINER_NAME }}
+                 IMAGE_TAG: ${{ github.sha }}
     deploy:
         permissions:
             actions: read
