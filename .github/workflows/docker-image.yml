@@ -25,4 +25,4 @@ jobs:
           push: true
           build-args: |
             version= 1.0
-          tags: devsecopscelula.azurecr.io/my-image-name:${{ github.run_number }}
+          tags: devsecopsregaxyt.azurecr.io/my-image-name:${{ github.run_number }}
