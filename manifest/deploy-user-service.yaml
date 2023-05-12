@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deploy
+  namespace: qa
+  labels:
+    app: users-service
+spec:
+  selector:
+    matchLabels:
+      app: users-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: users-service
+    spec:
+      containers:
+        - name: users-service
+          image: devsecopscelula.azurecr.io/my-image-name:${{ github.run_number }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
