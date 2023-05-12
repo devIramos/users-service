@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: users-service
-          image: devsecopscelula.azurecr.io/my-image-name:${{ github.run_number }}
+          image: image-build-from-azure
           imagePullPolicy: Always
           ports:
             - containerPort: 80
