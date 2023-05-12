@@ -18,7 +18,7 @@ jobs:
         with:
           registry: https://devsecopsregaxyt.azurecr.io
           username: DevSecOpsRegAxyt
-          password: rFSH9yZPS1bjKJqxHRaYQBkw+69E+y3e22zFj/XcZi+ACRBj0Xvf
+          password: W8Fx5zWBVjmA7H0q7smrHp14jrm3vPD0RSM/1UdaiV+ACRAfnlq+
       - name: Build & Push
         uses: docker/build-push-action@v2
         with:
